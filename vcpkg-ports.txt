@@ -1,0 +1,9 @@
+allegro5
+ogre[assimp,core,freeimage,overlay,zziplib]
+sdl2-gfx
+sdl2-image[core,libjpeg-turbo,libwebp,tiff] 
+sdl2-mixer[core,dynamic-load,libflac,libmodplug,libvorbis,mpg123,nativemidi,opusfile] 
+sdl2-net
+sdl2-ttf
+sdl2pp
+sfml
