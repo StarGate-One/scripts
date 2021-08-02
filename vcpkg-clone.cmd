@@ -1,3 +1,4 @@
+@echo off
 setlocal
 
 set COPYCMD=/b /v /y
@@ -41,6 +42,7 @@ if exist %_vcpkg_tool_exe% (
 	%_vcpkg_exe% version
 )
 
-
+cd %_vcpkg_root%
+git submodule add git@github.com:microsoft/vcpkg-tool.git %_vcpkg_tool%
 
 endlocal

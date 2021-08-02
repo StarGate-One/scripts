@@ -1,3 +1,4 @@
+@echo off
 setlocal
 set _root_drive=D:
 set _vcpkg_root=%_root_drive%\vcpkg
