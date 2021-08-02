@@ -2,7 +2,7 @@
 setlocal
 set _root_drive=D:
 set _vcpkg_root=%_root_drive%\vcpkg
-set _vcpkg_sdl2_log=D:\Projects\Git\logs\vcpkg-search.log
+set _vcpkg_log=D:\Projects\Git\logs\vcpkg-search.log
 
 set CMAKE_TOOLCHAIN_FILE=%_vcpkg_root%\buildsystems\vcpkg.cmake
 set PreferredToolArchitecture=x64
@@ -35,11 +35,11 @@ set "CMAKE_TOOLCHAIN_FILE=%CMAKE_TOOLCHAIN_FILE:\=/%"
 cd %_root_drive%\
 cd %_vcpkg_root%
 
-rem set >%_vcpkg_sdl2_log%
-echo. >%_vcpkg_sdl2_log%
-echo. >>%_vcpkg_sdl2_log%
+rem set >%_vcpkg_log%
+echo. >%_vcpkg_log%
+echo. >>%_vcpkg_log%
 
 rem
-.\vcpkg.exe search >>%_vcpkg_sdl2_log% 2>>&1
+.\vcpkg.exe search >>%_vcpkg_log% 2>>&1
 
 endlocal

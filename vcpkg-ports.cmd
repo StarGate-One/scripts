@@ -2,8 +2,8 @@
 setlocal
 set _root_drive=D:
 set _vcpkg_root=%_root_drive%\vcpkg
-set _vcpkg_sdl2_ports=D:\Projects\Git\scripts\vcpkg-ports.txt
-set _vcpkg_sdl2_log=D:\Projects\Git\logs\vcpkg-ports.log
+set _vcpkg_ports=D:\Projects\Git\scripts\vcpkg-ports.txt
+set _vcpkg_log=D:\Projects\Git\logs\vcpkg-ports.log
 
 set CMAKE_TOOLCHAIN_FILE=%_vcpkg_root%\buildsystems\vcpkg.cmake
 set PreferredToolArchitecture=x64
@@ -35,14 +35,14 @@ set "CMAKE_TOOLCHAIN_FILE=%CMAKE_TOOLCHAIN_FILE:\=/%"
 cd %_root_drive%\
 cd %_vcpkg_root%
 
-set >%_vcpkg_sdl2_log%
-echo. >>%_vcpkg_sdl2_log%
-echo. >>%_vcpkg_sdl2_log%
+set >%_vcpkg_log%
+echo. >>%_vcpkg_log%
+echo. >>%_vcpkg_log%
 
-@rem .\vcpkg.exe install --recurse --keep-going --dry-run "@%_vcpkg_sdl2_ports%" >>%_vcpkg_sdl2_log% 2>>&1
-@rem .\vcpkg.exe install --recurse --keep-going --debug "@%_vcpkg_sdl2_ports%" >>%_vcpkg_sdl2_log% 2>>&1
-@rem .\vcpkg.exe install --recurse --keep-going --head "@%_vcpkg_sdl2_ports%" >>%_vcpkg_sdl2_log% 2>>&1
+@rem .\vcpkg.exe install --recurse --keep-going --dry-run "@%_vcpkg_ports%" >>%_vcpkg_log% 2>>&1
+@rem .\vcpkg.exe install --recurse --keep-going --debug "@%_vcpkg_ports%" >>%_vcpkg_log% 2>>&1
+@rem .\vcpkg.exe install --recurse --keep-going --head "@%_vcpkg_ports%" >>%_vcpkg_log% 2>>&1
 @rem 
-.\vcpkg.exe install --recurse --keep-going "@%_vcpkg_sdl2_ports%" >>%_vcpkg_sdl2_log% 2>>&1
+.\vcpkg.exe install --recurse --keep-going "@%_vcpkg_ports%" >>%_vcpkg_log% 2>>&1
 
 endlocal
