@@ -1,7 +1,7 @@
 echo. >>%_vcpkg_log%
 
 call date-time.cmd
-echo Date: %file-current-date%                                           Time: %file-current-time% >>%_vcpkg_log% 2>>&1
+echo Date: %file-current-date%                                                                                           Time: %file-current-time% >>%_vcpkg_log% 2>>&1
 echo. >>%_vcpkg_log%
 
 call cmake-version.cmd
@@ -26,7 +26,7 @@ echo Microsoft (R) C/C++ Optimizing Compiler Version [%_cpp_version%] for %VSCMD
 echo. >>%_vcpkg_log%
 
 call vswhere-version.cmd
-echo Visual Studio Locator Version [%_vswhere_version_1%] [query version %_vswhere_version_2%] >>%_vcpkg_log% 2>>&1
+echo Visual Studio Locator (vswhere) Version [%_vswhere_version_1%] query version [%_vswhere_version_2%] >>%_vcpkg_log% 2>>&1
 echo. >>%_vcpkg_log%
 
 call windows-version.cmd
