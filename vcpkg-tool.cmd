@@ -29,6 +29,9 @@ if exist %_vcpkg_tool_exe% (
 	copy %_vcpkg_tool_exe% %_vcpkg_exe%
 	cd %_vcpkg_root%
 	%_vcpkg_exe% version
+	if not exist %_vcpkg_metrics% (
+		echo. %_vcpkg_metrics%
+	)
 )
 
 endlocal
