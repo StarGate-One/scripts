@@ -21,7 +21,7 @@ if exist %_vcpkg_tool_build% (
 	mkdir %_vcpkg_tool_build%
 )
 
-cmake -B %_vcpkg_tool_build% -S %_vcpkg_tool_source% -G "Visual Studio 16 2019" -A x64 -T v142 -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DVCPKG_DEVELOPMENT_WARNINGS=ON -DVCPKG_WARNINGS_AS_ERRORS=ON -DVCPKG_BUILD_FUZZING=OFF -DVCPKG_EMBED_GIT_SHA=ON
+cmake -B %_vcpkg_tool_build% -S %_vcpkg_tool_source% -G "Visual Studio 16 2019" -A x64 -T v142 -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DVCPKG_DEVELOPMENT_WARNINGS=ON -DVCPKG_WARNINGS_AS_ERRORS=ON -DVCPKG_BUILD_FUZZING=OFF -DVCPKG_EMBED_GIT_SHA=ON -DVCPKG_ADD_SOURCELINK=ON
 
 cmake --build %_vcpkg_tool_build% --target vcpkg --clean-first --verbose --config release --parallel 8
 
