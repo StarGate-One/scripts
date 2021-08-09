@@ -53,7 +53,7 @@ cd %_vcpkg_root%
 rem git submodule add git@github.com:microsoft/vcpkg-tool.git %_vcpkg_tool%
 git submodule add git@github.com:StarGate-One/vcpkg-tool.git %_vcpkg_tool%
 
-if not exst %_vcpkg_temp% (
+if not exist %_vcpkg_temp% (
 	mkdir %_vcpkg_temp%
 )
 
