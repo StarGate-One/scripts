@@ -6,6 +6,7 @@ set _root_drive=D:
 set _vcpkg_root=%_root_drive%\vcpkg
 set _vcpkg_exe=%_vcpkg_root%\vcpkg.exe
 set _vcpkg_metrics=%_vcpkg_root%\vcpkg.disable-metrics
+set _vcpkg_temp=%_vcpkg_root%\temp
 set _vcpkg_tool=%_vcpkg_root%\vcpkg-tool
 set _vcpkg_tool_build=%_vcpkg_tool%\build
 set _vcpkg_tool_source=%_vcpkg_tool%
@@ -49,6 +50,11 @@ if exist %_vcpkg_tool_exe% (
 )
 
 cd %_vcpkg_root%
-git submodule add git@github.com:microsoft/vcpkg-tool.git %_vcpkg_tool%
+rem git submodule add git@github.com:microsoft/vcpkg-tool.git %_vcpkg_tool%
+git submodule add git@github.com:StarGate-One/vcpkg-tool.git %_vcpkg_tool%
+
+if not exst %_vcpkg_temp% (
+	mkdir %_vcpkg_temp%
+)
 
 endlocal
