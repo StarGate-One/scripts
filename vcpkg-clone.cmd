@@ -13,7 +13,7 @@ set _vcpkg_packages=%_vcpkg_root%\packages
 set _vcpkg_metrics=%_vcpkg_root%\vcpkg.disable-metrics
 set _vcpkg_temp=%_vcpkg_root%\temp
 set _vcpkg_tool=%_vcpkg_root%\vcpkg-tool
-set _vcpkg_tool_module=.\vcpkg-tool
+set _vcpkg_tool_module=vcpkg-tool
 set _vcpkg_tool_build=%_vcpkg_tool%\build
 set _vcpkg_tool_source=%_vcpkg_tool%
 set _vcpkg_tool_exe=%_vcpkg_tool%\build\Release\vcpkg.exe
@@ -29,7 +29,7 @@ rem git clone -c core.symlinks=false --verbose --progress --recursive git@github
 git clone -c core.symlinks=false --verbose --progress --recursive git@github.com:StarGate-One/vcpkg.git %_vcpkg_root%
 
 cd %_vcpkg_root%
-git submodule update --init --recursive
+rem git submodule update --init --recursive
 
 git remote add upstream git@github.com:microsoft/vcpkg.git
 
@@ -41,7 +41,7 @@ rem git clone -c core.symlinks=false --verbose --progress --recursive git@github
 git clone -c core.symlinks=false --verbose --progress --recursive git@github.com:StarGate-One/vcpkg-tool.git %_vcpkg_tool%
 
 cd %_vcpkg_tool%
-git submodule update --init --recursive
+rem git submodule update --init --recursive
 
 git remote add upstream git@github.com:microsoft/vcpkg-tool.git
 
@@ -84,3 +84,10 @@ if not exist %_vcpkg_temp% (
 )
 
 endlocal
+rem git submodule update --init --recursive -v vcpkg-tool
+rem $ cat .gitmodules
+rem [submodule "vcpkg-tool"]
+rem        path = vcpkg-tool
+rem        url = git@github.com:StarGate-One/vcpkg-tool.git
+rem        fetchRecurseSubmodules = on-demand
+rem        branch = .
