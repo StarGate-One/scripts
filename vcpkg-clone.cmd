@@ -18,21 +18,27 @@ if exist %_vcpkg_root% (
 	rmdir /q /s %_vcpkg_root%
 )
 
-git clone -c core.symlinks=false --verbose --progress --recursive git@github.com:microsoft/vcpkg.git %_vcpkg_root%
+rem git clone -c core.symlinks=false --verbose --progress --recursive git@github.com:microsoft/vcpkg.git %_vcpkg_root%
+git clone -c core.symlinks=false --verbose --progress --recursive git@github.com:StarGate-One/vcpkg.git %_vcpkg_root%
 
 cd %_vcpkg_root%
 git submodule update --init --recursive
+
+git remote add upstream git@github.com:microsoft/vcpkg.git
 
 if not exist %_vcpkg_metrics% (
 	echo. >%_vcpkg_metrics%
 )
 
-git clone -c core.symlinks=false --verbose --progress --recursive git@github.com:microsoft/vcpkg-tool.git %_vcpkg_tool%
+rem git clone -c core.symlinks=false --verbose --progress --recursive git@github.com:microsoft/vcpkg-tool.git %_vcpkg_tool%
+git clone -c core.symlinks=false --verbose --progress --recursive git@github.com:StarGate-One/vcpkg-tool.git %_vcpkg_tool%
 
 cd %_vcpkg_tool%
 git submodule update --init --recursive
 
-cmake -B %_vcpkg_tool_build% -S %_vcpkg_tool_source% -G "Visual Studio 16 2019" -A x64 -T v142 -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DVCPKG_DEVELOPMENT_WARNINGS=ON -DVCPKG_WARNINGS_AS_ERRORS=ON -DVCPKG_BUILD_FUZZING=OFF -DVCPKG_EMBED_GIT_SHA=ON
+git remote add upstream git@github.com:microsoft/vcpkg-tool.git
+
+cmake -B %_vcpkg_tool_build% -S %_vcpkg_tool_source% -G "Visual Studio 16 2019" -A x64 -T v142 -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DVCPKG_DEVELOPMENT_WARNINGS=ON -DVCPKG_WARNINGS_AS_ERRORS=ON -DVCPKG_BUILD_FUZZING=OFF -DVCPKG_EMBED_GIT_SHA=ON -DVCPKG_ADD_SOURCELINK=ON
 
 cmake --build %_vcpkg_tool_build% --target vcpkg --clean-first --verbose --config release --parallel 8
 
