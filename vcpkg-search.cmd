@@ -36,7 +36,7 @@ cd %_root_drive%\
 cd %_vcpkg_root%
 
 echo. >%_vcpkg_log%
-echo                                               Vcpkg List of available ports >>%_vcpkg_log% 
+echo                                               Vcpkg Search of available ports >>%_vcpkg_log% 
 
 call vcpkg-list-versions.cmd
 
