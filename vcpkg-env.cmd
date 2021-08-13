@@ -1,5 +1,5 @@
 @echo off
-setlocal
+
 set _root_drive=D:
 set _vcpkg_root=%_root_drive%\vcpkg
 set _vcpkg_ports=D:\Projects\Git\scripts\vcpkg-ports.txt
@@ -34,15 +34,3 @@ set "CMAKE_TOOLCHAIN_FILE=%CMAKE_TOOLCHAIN_FILE:\=/%"
 %_root_drive%
 cd %_root_drive%\
 cd %_vcpkg_root%
-
-set >%_vcpkg_log%
-echo. >>%_vcpkg_log%
-echo. >>%_vcpkg_log%
-
-@rem .\vcpkg.exe install --recurse --keep-going --dry-run "@%_vcpkg_ports%" >>%_vcpkg_log% 2>>&1
-@rem .\vcpkg.exe install --recurse --keep-going --debug "@%_vcpkg_ports%" >>%_vcpkg_log% 2>>&1
-@rem .\vcpkg.exe install --recurse --keep-going --head "@%_vcpkg_ports%" >>%_vcpkg_log% 2>>&1
-@rem 
-.\vcpkg.exe install --recurse --keep-going "@%_vcpkg_ports%" >>%_vcpkg_log% 2>>&1
-
-endlocal
