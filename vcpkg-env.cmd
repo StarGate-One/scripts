@@ -5,7 +5,7 @@ call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary
 set _root_drive=D:
 set _vcpkg_root=%_root_drive%\vcpkg
 
-set CMAKE_TOOLCHAIN_FILE=%_vcpkg_root%\buildsystems\vcpkg.cmake
+set CMAKE_TOOLCHAIN_FILE=%_vcpkg_root%\scripts\buildsystems\vcpkg.cmake
 set "CMAKE_TOOLCHAIN_FILE=%CMAKE_TOOLCHAIN_FILE:\=/%"
 set PreferredToolArchitecture=%Platform%
 set TEMP=%_vcpkg_root%\temp
