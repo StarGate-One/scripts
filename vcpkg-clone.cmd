@@ -1,6 +1,9 @@
 @echo off
 setlocal
 
+set temp=%USERPROFILE%\AppData\Local\Temp
+set tmp=%USERPROFILE%\AppData\Local\Temp
+
 set _root_drive=D:
 set _vcpkg_root=%_root_drive%\vcpkg
 set _vcpkg_archives=%_vcpkg_root%\archives
