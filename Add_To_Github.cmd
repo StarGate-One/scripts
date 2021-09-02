@@ -80,3 +80,8 @@ cd ../vbisam-2.0.1
 git branch -M main
 git remote add origin git@github.com:StarGate-One/vbisam-2.0.1
 git push -u origin main
+
+cd ../cobol
+git branch -M main
+git remote add origin git@github.com:StarGate-One/cobol
+git push -u origin main
