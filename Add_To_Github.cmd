@@ -85,3 +85,8 @@ cd ../cobol
 git branch -M main
 git remote add origin git@github.com:StarGate-One/cobol
 git push -u origin main
+
+cd ../gnucobol-GCSORT
+git branch -M main
+git remote add origin git@github.com:StarGate-One/gnucobol-GCSORT
+git push -u origin main
