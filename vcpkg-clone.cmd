@@ -22,11 +22,11 @@ set _vcpkg_tool_build=%_vcpkg_tool%\build
 cd %_root_drive%\
 
 if exist %_vcpkg_root% (
-	rmdir /q /s %_vcpkg_root%
+   rmdir /q /s %_vcpkg_root%
 )
 
 if exist %_vcpkg_tool% (
-	rmdir /q /s %_vcpkg_tool%
+   rmdir /q /s %_vcpkg_tool%
 )
 
 git clone -c core.symlinks=false --verbose --progress --recursive git@github.com:StarGate-One/vcpkg.git %_vcpkg_root%
@@ -36,33 +36,33 @@ cd %_vcpkg_root%
 git remote add upstream git@github.com:microsoft/vcpkg.git
 
 if not exist %_vcpkg_metrics% (
-	echo. >%_vcpkg_metrics%
+   echo. >%_vcpkg_metrics%
 )
 
 if not exist %_vcpkg_archives% (
-	mkdir %_vcpkg_archives%
+   mkdir %_vcpkg_archives%
 )
 
 if not exist %_vcpkg_buildtrees% (
-	mkdir %_vcpkg_buildtrees%
+   mkdir %_vcpkg_buildtrees%
 )
 
 if not exist %_vcpkg_downloads_link% (
-	if exist %_vcpkg_downloads% (
-	mklink /j %_vcpkg_downloads_link% %_vcpkg_downloads%
-	)
+   if exist %_vcpkg_downloads% (
+   mklink /j %_vcpkg_downloads_link% %_vcpkg_downloads%
+   )
 )
 
 if not exist %_vcpkg_installed% (
-	mkdir %_vcpkg_installed%
+   mkdir %_vcpkg_installed%
 )
 
 if not exist %_vcpkg_packages% (
-	mkdir %_vcpkg_packages%
+   mkdir %_vcpkg_packages%
 )
 
 if not exist %_vcpkg_temp% (
-	mkdir %_vcpkg_temp%
+   mkdir %_vcpkg_temp%
 )
 
 cd %_root_drive%\
