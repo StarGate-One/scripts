@@ -35,6 +35,10 @@ cd %_vcpkg_root%
 
 git remote add upstream git@github.com:microsoft/vcpkg.git
 
+git pull upstream master -a -f
+
+git push --all -f
+
 if not exist %_vcpkg_metrics% (
    echo. >%_vcpkg_metrics%
 )
@@ -72,5 +76,9 @@ git clone -c core.symlinks=false --verbose --progress --recursive git@github.com
 cd %_vcpkg_tool%
 
 git remote add upstream git@github.com:microsoft/vcpkg-tool.git
+
+git pull upstream main -a -f
+
+git push --all -f
 
 endlocal
