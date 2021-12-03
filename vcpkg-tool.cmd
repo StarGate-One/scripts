@@ -16,7 +16,7 @@ call date-time.cmd
 set _vcpkg-tool_latest_git-commit-date=EMPTY
 
 set _vcpkg_git_format="--format=%%cd"
-set _vcpkg_git_date_format="--date=iso-strict"
+set _vcpkg_git_date_format="--date=format-local:%%Y-%%m-%%d-T%%H:%%M:%%SZ"
 
 %_root_drive%
 cd %_root_drive%\
