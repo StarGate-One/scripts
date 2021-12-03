@@ -18,17 +18,17 @@ set _vcpkg-tool_latest_git-commit-date=EMPTY
 set _vcpkg_git_format="--format=%%cd"
 set _vcpkg_git_date_format="--date=iso-strict"
 
+%_root_drive%
+cd %_root_drive%\
+
+cd %_vcpkg_tool%
+
 for /f "tokens=* USEBACKQ" %%g in (`git log -n 1 %_vcpkg_git_format% %_vcpkg_git_date_format%`) do (
 	set _vcpkg-tool_latest_git-commit-date=%%g
 	if %_vcpkg-tool_latest_git-commit-date% == "EMPTY" (
        set _vcpkg-tool_latest_git-commit-date=%file_current-date%
 	)
 )
-
-%_root_drive%
-cd %_root_drive%\
-
-cd %_vcpkg_tool%
 
 if exist %_vcpkg_tool_build% (
    rmdir /q /s %_vcpkg_tool_build%
