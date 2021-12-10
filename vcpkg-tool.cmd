@@ -18,6 +18,7 @@ set _vcpkg-tool_latest_git-commit-date=EMPTY
 set _vcpkg_git_format="--format=%%cd"
 rem set _vcpkg_git_date_format="--date=format-local:%%Y-%%m-%%d-T%%H:%%M:%%SZ"
 set _vcpkg_git_date_format="--date=format-local:%%Y-%%m-%%d"
+set TZ=UTC
 
 %_root_drive%
 cd %_root_drive%\
