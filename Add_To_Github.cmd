@@ -6,9 +6,9 @@ git branch -M main
 git remote add origin git@github.com:StarGate-One/_vcpkg.git
 git push -u origin main
 
-cd ../Allegro5
+cd ../Allegro
 git branch -M main
-git remote add origin git@github.com:StarGate-One/Allegro5.git
+git remote add origin git@github.com:StarGate-One/Allegro.git
 git push -u origin main
 
 cd ../Bible
