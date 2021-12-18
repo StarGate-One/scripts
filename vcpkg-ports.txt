@@ -144,6 +144,7 @@ sdl2-mixer[core,dynamic-load,fluidsynth,libflac,libmodplug,libvorbis,mpg123,nati
 sdl2-net[core]
 sdl2-ttf[core]
 sdl2[core]
+sdl2pp[core]
 sfml[core]
 smpeg2[core]
 soil2[core]
