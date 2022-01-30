@@ -11,6 +11,11 @@ git branch -M main
 git remote add origin git@github.com:StarGate-One/Allegro.git
 git push -u origin main
 
+cd ../Assembler
+git branch -M main
+git remote add origin git@github.com:StarGate-One/Assembler.git
+git push -u origin main
+
 cd ../Bible
 git branch -M main
 git remote add origin git@github.com:StarGate-One/Bible.git
@@ -24,6 +29,11 @@ git push -u origin main
 cd ../C_Cpp
 git branch -M main
 git remote add origin git@github.com:StarGate-One/C_Cpp.git
+git push -u origin main
+
+cd ../CMake
+git branch -M main
+git remote add origin git@github.com:StarGate-One/CMake.git
 git push -u origin main
 
 cd ../glfw_3.3.4
