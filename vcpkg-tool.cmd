@@ -17,8 +17,8 @@
 @set _vcpkg-tool_ce_sha=EMPTY
 @set _vcpkg-tool_latest_tag-refname-date=EMPTY
 
-@rem set _vcpkg_git_format="--format=%%cd"
-@rem set _vcpkg_git_date_format="--date=format-local:%%Y-%%m-%%d"
+@set _vcpkg_git_format="--format=%%cd"
+@set _vcpkg_git_date_format="--date=format-local:%%Y-%%m-%%d"
 @set TZ=UTC
 
 @%_root_drive%
@@ -35,17 +35,18 @@
 )
 
 :next1
-@rem for /f "tokens=* USEBACKQ" %%g in (`git show --quiet HEAD %_vcpkg_git_format% %_vcpkg_git_date_format%`) do (
-     @rem set _vcpkg-tool_latest_tag-refname-date=%%g
-@rem )
+@rem get date of last commit in CCYY-MM-DD format UTC Timezone
+@for /f "tokens=* USEBACKQ" %%g in (`git show --quiet HEAD %_vcpkg_git_format% %_vcpkg_git_date_format%`) do (
+     @set _vcpkg-tool_latest_tag-refname-date=%%g
+)
 
 @rem get all tags and sort in reverse commit date order
-@for /f "tokens=* USEBACKQ" %%g in (`git tag --sort=-committerdate`) do (
-     @set _vcpkg-tool_latest_tag-refname-date=%%g
-     @if %_vcpkg-tool_latest_tag-refname-date% NEQ "EMPTY" (
-         @goto next2
-     ) 
-)
+@rem for /f "tokens=* USEBACKQ" %%g in (`git tag --sort=-committerdate`) do (
+     @rem set _vcpkg-tool_latest_tag-refname-date=%%g
+     @rem if %_vcpkg-tool_latest_tag-refname-date% NEQ "EMPTY" (
+         @rem goto next2
+     @rem ) 
+@rem )
 
 :next2
 @rem set to a legal date format if not done above 
