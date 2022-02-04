@@ -5,7 +5,7 @@ set _vswhere_version_2=EMPTY
 for /f "tokens=5*" %%g in ('vswhere.exe version') do (
    set _vswhere_version_1=%%g
    if %_vswhere_version_1% NEQ "EMPTY" (
-      goto :continue
+      goto continue
    )
 )
 
@@ -13,7 +13,7 @@ for /f "tokens=5*" %%g in ('vswhere.exe version') do (
 for /f "tokens=8*" %%g in ('vswhere.exe version') do (
    set _vswhere_version_2=%%g
    if %_vswhere_version_2% NEQ "EMPTY" (
-      goto :next
+      goto next
    )
 )
 

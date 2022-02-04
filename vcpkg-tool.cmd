@@ -30,7 +30,7 @@
 @for /f "tokens=* USEBACKQ" %%g in ("%_vcpkg_tool_azure%\vcpkg-ce-sha.txt") do (
      @set _vcpkg-tool_ce_sha=%%g
      @if %_vcpkg-tool_ce_sha% NEQ "EMPTY" (
-         @goto :next1
+         @goto next1
      )
 )
 
@@ -43,7 +43,7 @@
 @for /f "tokens=* USEBACKQ" %%g in (`git tag --sort=-committerdate`) do (
      @set _vcpkg-tool_latest_tag-refname-date=%%g
      @if %_vcpkg-tool_latest_tag-refname-date% NEQ "EMPTY" (
-         @goto :next2
+         @goto next2
      ) 
 )
 

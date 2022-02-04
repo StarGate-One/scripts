@@ -8,7 +8,7 @@ cl > NUL 2> %_temp_file%
 for /f "tokens=7 usebackq" %%g in ("%_temp_file%") do (
 	set _cpp_version=%%g
 	if %_cpp_version% NEQ "EMPTY" (
-		goto :continue
+		goto continue
 	)
 )
 :continue
@@ -20,7 +20,7 @@ set _vs_version=EMPTY
 for /f "tokens=1* delims=." %%g in ('vswhere -version 16 -property displayName') do (
 	set _vs_version=%%g
 	if %_vs_version% NEQ "EMPTY" (
-		goto :next
+		goto next
 	)
 )
 :next
