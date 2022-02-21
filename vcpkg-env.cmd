@@ -1,6 +1,6 @@
 @echo off
 
-call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
+call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
 
 set _root_drive=D:
 set _vcpkg_root=%_root_drive%\vcpkg
@@ -37,7 +37,7 @@ set VCPKG_NO_CLEAN=
 set VCPKG_NUGET_REPOSITORY=
 set VCPKG_OVERLAY_PORTS=
 set VCPKG_OVERLAY_TRIPLETS=
-set VCPKG_PLATFORM_TOOLSET=v142
+set VCPKG_PLATFORM_TOOLSET=v143
 set VCPKG_ROOT=%_vcpkg_root%
 set VCPKG_TARGET_ARCHITECTURE=%Platform%
 set VCPKG_TARGET_TRIPLET=%VSCMD_ARG_TGT_ARCH%-windows
