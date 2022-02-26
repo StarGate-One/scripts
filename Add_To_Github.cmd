@@ -61,7 +61,12 @@ git branch -M main
 git remote add origin git@github.com:StarGate-One/SDL2.git
 git push -u origin main
 
-cd ../SFML
+cd ./Spectre_Chess
+git branch -M main
+git remote add origin git@github.com:StarGate-One/Spectre_Chess.git
+git push -u origin main
+
+cd ../../SFML
 git branch -M main
 git remote add origin git@github.com:StarGate-One/SFML.git
 git push -u origin main
