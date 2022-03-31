@@ -15,6 +15,6 @@ echo. >>%_vcpkg_log%
 @rem .\vcpkg.exe install --recurse --keep-going --debug "@%_vcpkg_ports%" >>%_vcpkg_log% 2>>&1
 @rem .\vcpkg.exe install --recurse --keep-going --head "@%_vcpkg_ports%" >>%_vcpkg_log% 2>>&1
 @rem
-.\vcpkg.exe install --recurse --keep-going "@%_vcpkg_ports%" >>%_vcpkg_log% 2>>&1
+.\vcpkg.exe install --recurse --keep-going --clean-after-build "@%_vcpkg_ports%" >>%_vcpkg_log% 2>>&1
 
 endlocal
