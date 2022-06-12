@@ -1,21 +1,26 @@
 @echo off
-setlocal
-set _root_drive=D:
-set _vcpkg_root=%_root_drive%\vcpkg
-set _vcpkg_ports=D:\Projects\Git\scripts\vcpkg-ports.txt
-set _vcpkg_log=D:\Projects\Git\logs\vcpkg-ports.log
+@setlocal
+@set _root_drive=D:
+@set _vcpkg_root=%_root_drive%\vcpkg
+@set _vcpkg_ports=D:\Projects\Git\scripts\vcpkg-ports.txt
+@set _vcpkg_log=D:\Projects\Git\logs\vcpkg-ports.log
 
-call vcpkg-env.cmd >nul
+@call vcpkg-env.cmd >nul
 
-set >%_vcpkg_log%
-echo. >>%_vcpkg_log%
-echo. >>%_vcpkg_log%
+@set >%_vcpkg_log%
+@echo. >>%_vcpkg_log%
+@echo. >>%_vcpkg_log%
 
 @rem .\vcpkg.exe install --recurse --keep-going --dry-run "@%_vcpkg_ports%" >>%_vcpkg_log% 2>>&1
 @rem .\vcpkg.exe install --recurse --keep-going --debug "@%_vcpkg_ports%" >>%_vcpkg_log% 2>>&1
 @rem .\vcpkg.exe install --recurse --keep-going --head "@%_vcpkg_ports%" >>%_vcpkg_log% 2>>&1
 @rem
 @rem .\vcpkg.exe install --recurse --keep-going --clean-after-build "@%_vcpkg_ports%" >>%_vcpkg_log% 2>>&1
-.\vcpkg.exe install --recurse --keep-going --debug --debug-env "@%_vcpkg_ports%" >>%_vcpkg_log% 2>>&1
 
-endlocal
+@echo. >>%_vcpkg_log%
+@echo .\vcpkg.exe install --recurse --keep-going --debug --debug-env --clean-buildtrees-after-build --clean-packages-after-build "@%_vcpkg_ports%" >>%_vcpkg_log% 2>>&1
+@echo. >>%_vcpkg_log%
+
+.\vcpkg.exe install --recurse --keep-going --debug --debug-env --clean-buildtrees-after-build --clean-packages-after-build "@%_vcpkg_ports%" >>%_vcpkg_log% 2>>&1
+
+@endlocal
