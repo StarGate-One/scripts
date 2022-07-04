@@ -60,7 +60,7 @@ rem )
 )
 
 rem Build the vcpkg.exe source code
-cmake -B %_vcpkg_tool_build% -S %_vcpkg_tool_source% -G "Visual Studio 17 2022" -A x64 -T v143 -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DVCPKG_DEVELOPMENT_WARNINGS=ON -DVCPKG_WARNINGS_AS_ERRORS=ON -DVCPKG_BUILD_FUZZING=OFF -DVCPKG_BUILD_TLS12_DOWNLOADER=OFF -DVCPKG_EMBED_GIT_SHA=ON -DVCPKG_OFFICIAL_BUILD=OFF -DFETCHCONTENT_FULLY_DISCONNECTED=OFF -DVCPKG_ADD_SOURCELINK=OFF -DVCPKG_BASE_VERSION=%_vcpkg-tool_latest_tag-refname-date% -DVCPKG_VERSION=%_vcpkg-tool_latest_tag-refname-date%
+cmake -B %_vcpkg_tool_build% -S %_vcpkg_tool_source% -G "Visual Studio 17 2022" -A x64 -T v143 -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF -DVCPKG_DEVELOPMENT_WARNINGS=ON -DVCPKG_WARNINGS_AS_ERRORS=ON -DVCPKG_BUILD_FUZZING=OFF -DVCPKG_BUILD_TLS12_DOWNLOADER=OFF -DVCPKG_EMBED_GIT_SHA=ON -DVCPKG_OFFICIAL_BUILD=OFF -DFETCHCONTENT_FULLY_DISCONNECTED=OFF -DVCPKG_ADD_SOURCELINK=OFF -DVCPKG_BASE_VERSION=%_vcpkg-tool_latest_tag-refname-date% -DVCPKG_VERSION=%_vcpkg-tool_latest_tag-refname-date% -DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThreaded 
 
 rem Compile/Link vcpkg.exe
 cmake --build %_vcpkg_tool_build% --target vcpkg --clean-first --verbose --config release --parallel 8
