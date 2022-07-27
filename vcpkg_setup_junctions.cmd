@@ -38,8 +38,6 @@
 @set _vcpkg_dbg_share=%_vcpkg_rel_share%
 @set _vcpkg_dbg_tools=%_vcpkg_installed_dbg_dir%\tools
 
-@set _vcpkg
-
 @rem goto end
 
 @if not exist %_vcpkg_release_bin% (
